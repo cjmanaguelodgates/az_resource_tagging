@@ -5,6 +5,7 @@ import openpyxl
 from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl.styles import PatternFill, Font
 from openpyxl.worksheet.table import Table, TableStyleInfo
+from datetime import datetime
 
 # Initialize credentials and client
 credential = DefaultAzureCredential()
@@ -176,18 +177,15 @@ for subscription_id in subscription_ids:
 # Create a DataFrame
 df = pd.DataFrame(processed_data)
 
-
 # Sort by the 'TAG_APPLICATION' column (case-insensitive)
 df = df.sort_values(by='TAG_APPLICATION', key=lambda x: x.str.lower())
 
 # Sort by the 'SUBSCRIPTION_NAME' column (case-insensitive)
 df = df.sort_values(by='SUBSCRIPTION_NAME', key=lambda x: x.str.lower())
 
-
-
-
-# Save the DataFrame to an Excel file with a specified sheet name
-output_file = "resources.xlsx"
+# Generate the output file name based on the current date
+current_date = datetime.now().strftime("%B_%d_%Y")
+output_file = f"{current_date}_EDS_DIO_AZ_Resources_Inventory.xlsx"
 
 # Create an Excel writer using openpyxl
 with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
