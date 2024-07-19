@@ -269,7 +269,7 @@ root.protocol("WM_DELETE_WINDOW", disable_close)
 def load_icon(path):
     return ImageTk.PhotoImage(Image.open(path).resize((20, 20), Image.LANCZOS))
 
-icons = {name: load_icon(f"{name}.jpg") for name in ["update", "clear", "update", "rollback", "close", "pull"]}
+icons = {name: load_icon(os.path.join("icons", f"{name}.jpg")) for name in ["update", "clear", "update", "rollback", "close", "pull"]}
 
 def create_label_and_entry(row, label_text, variable):
     tk.Label(root, text=label_text).grid(row=row, column=0, padx=5, pady=2, sticky="e")
