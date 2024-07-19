@@ -1,0 +1,20 @@
+2024-07-20 00:05:32 - Initializing credentials and clients...
+2024-07-20 00:05:32 - Attempting to authenticate using DefaultAzureCredential...
+2024-07-20 00:05:37 - DefaultAzureCredential failed. Falling back to InteractiveBrowserCredential.
+2024-07-20 00:05:37 - DefaultAzureCredential failed to retrieve a token from the included credentials.
+Attempted credentials:
+	EnvironmentCredential: EnvironmentCredential authentication unavailable. Environment variables are not fully configured.
+Visit https://aka.ms/azsdk/python/identity/environmentcredential/troubleshoot to troubleshoot this issue.
+	ManagedIdentityCredential: ManagedIdentityCredential authentication unavailable. The requested identity has not been assigned to this resource. Error: Unexpected response "{'error': 'invalid_request', 'error_description': 'Identity not found'}"
+	SharedTokenCacheCredential: SharedTokenCacheCredential authentication unavailable. No accounts were found in the cache.
+	AzureCliCredential: ERROR: AADSTS70043: The refresh token has expired or is invalid due to sign-in frequency checks by conditional access. The token was issued on 2024-07-15T12:21:24.4202611Z and the maximum allowed lifetime for this request is 43200. Trace ID: 6d62c3cb-a2d5-479b-9baa-244ab0795800 Correlation ID: d0401b39-8921-485d-8f86-44a492dd07a8 Timestamp: 2024-07-19 16:05:34Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.azure.com/.default
+
+	AzurePowerShellCredential: Please run "Connect-AzAccount" to set up account
+	AzureDeveloperCliCredential: Azure Developer CLI could not be found. Please visit https://aka.ms/azure-dev for installation instructions and then,once installed, authenticate to your Azure account using 'azd auth login'.
+To mitigate this issue, please refer to the troubleshooting guidelines here at https://aka.ms/azsdk/python/identity/defaultazurecredential/troubleshoot.
+2024-07-20 00:05:43 - In progress...
+2024-07-20 00:05:45 - Processing data...
+2024-07-20 00:05:46 - Data has been successfully exported to July_20_2024_EDS_DIO_AZ_Resources_Inventory.xlsx
+2024-07-20 00:05:46 - Export complete!
