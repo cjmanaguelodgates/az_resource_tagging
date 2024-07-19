@@ -36,7 +36,7 @@ def log_and_print(message):
 
 def configure_logging():
     log_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                 f"ResourceTagUpdate_{resource_group_entry.get()}_{datetime.now().strftime('%Y%m%d')}.log")
+                                 f"Update_AZ_Resource_Tag_{datetime.now().strftime('%Y_%m_%d_%H_%M_%S')}.log")
     logging.basicConfig(filename=log_file_path, level=logging.INFO, format='%(asctime)s - %(message)s')
 
 def update_tags():
