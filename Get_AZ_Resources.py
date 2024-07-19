@@ -243,7 +243,7 @@ class AzureResourceApp(QWidget):
     def setup_logging(self):
         if not os.path.exists('logs'):
             os.makedirs('logs')
-        self.log_file = datetime.now().strftime("logs/log_%Y_%m_%d_%H_%M_%S.txt")
+        self.log_file = datetime.now().strftime("Get_AZ_Resources/log_%Y_%m_%d_%H_%M_%S.txt")
 
     def log_message(self, message):
         timestamped_message = f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {message}"
