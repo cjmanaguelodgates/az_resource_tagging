@@ -35,8 +35,11 @@ def log_and_print(message):
     log_textbox.config(state=tk.DISABLED)
 
 def configure_logging():
-    log_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                 f"Update_AZ_Resource_Tag_{datetime.now().strftime('%Y_%m_%d_%H_%M_%S')}.log")
+    log_directory = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs')
+    if not os.path.exists(log_directory):
+        os.makedirs(log_directory)
+    
+    log_file_path = os.path.join(log_directory, f"Update_AZ_Resource_Tag_{datetime.now().strftime('%m_%d_%Y')}.log")
     logging.basicConfig(filename=log_file_path, level=logging.INFO, format='%(asctime)s - %(message)s')
 
 def update_tags():
